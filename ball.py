@@ -9,8 +9,10 @@ class Ball(Turtle):
         self.shape("circle")
         self.color("white")
         self.penup()
-        self.setheading(35)
+        # self.setheading(25)
 
     def move(self, position):
         if self.xcor() < position[0]:
-            self.forward(20)
+            new_x = self.xcor() + 10
+            new_y = self.ycor() + 10
+            self.goto(new_x, new_y)
