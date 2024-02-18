@@ -16,14 +16,13 @@ ball = Ball((320, 280))
 screen.listen()
 screen.onkey(r_paddle.go_up, "Up")
 screen.onkey(r_paddle.go_down, "Down")
-
 screen.onkey(l_paddle.go_up, "w")
 screen.onkey(l_paddle.go_down, "s")
 
 game_is_on = True
 while game_is_on:
+    time.sleep(0.001)
     screen.update()
-    time.sleep(0.1)
-    ball.move((300, 300))
+    ball.move((280, 280))
 
 screen.exitonclick()

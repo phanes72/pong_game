@@ -9,10 +9,21 @@ class Ball(Turtle):
         self.shape("circle")
         self.color("white")
         self.penup()
-        # self.setheading(25)
+
+        self.xcor()
+        self.ycor()
+        self.x_move = 0.2
+        self.y_move = 0.2
 
     def move(self, position):
-        if self.xcor() < position[0]:
-            new_x = self.xcor() + 10
-            new_y = self.ycor() + 10
-            self.goto(new_x, new_y)
+        self.setx(self.xcor() + self.x_move)
+        self.sety(self.ycor() + self.y_move)
+
+        if self.ycor() > 300:
+            self.sety(290)
+            self.y_move *= -1
+
+        if self.ycor() < -300:
+            self.sety(-290)
+            self.y_move *= -1
+
